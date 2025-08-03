@@ -483,14 +483,14 @@
         
         <div class="main-content">
             <div class="upload-section">
-                <input type="file" id="arbFile" class="file-input" accept=".arb,.json">
+                <input type="file" id="arbFile" class="file-input" accept=".json">
                 <button class="upload-btn" onclick="document.getElementById('arbFile').click()">
                     <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
                     </svg>
-                    Upload ARB File
+                    Upload JSON File
                 </button>
-                <p style="margin-top: 15px; color: var(--text-muted);">Select the ARB file to start translating</p>
+                <p style="margin-top: 15px; color: var(--text-muted);">Select the JSON file to start translating</p>
                 <div class="file-info" id="fileInfo">
                     <strong>File loaded:</strong> <span id="fileName"></span><br>
                     <strong>Original locale:</strong> <span id="originalLocale"></span><br>
@@ -531,13 +531,13 @@
             <div id="exportSection" class="export-section hidden">
                 <h3 style="margin-bottom: 15px; color: var(--text-primary);">Export Translation</h3>
                 <p style="margin-bottom: 20px; color: var(--text-muted);">
-                    Complete all translations to export the ARB file.
+                    Complete all translations to export the JSON file.
                 </p>
                 <button class="export-btn" id="exportBtn" disabled onclick="exportARB()">
                     <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
-                    Export ARB File
+                    Export JSON File
                 </button>
             </div>
         </div>
@@ -579,7 +579,7 @@
                     processARBData();
                 } catch (error) {
                     console.error('Error parsing file:', error);
-                    alert('Error parsing ARB file. Please make sure it\'s a valid JSON file.');
+                    alert('Error parsing file. Please make sure it\'s a valid JSON file.');
                 }
             };
             
@@ -770,13 +770,13 @@
             
             const a = document.createElement('a');
             a.href = url;
-            a.download = `app_${targetLanguage}.arb`;
+            a.download = `app_${targetLanguage}.json`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
 
-            alert(`Translation exported successfully as app_${targetLanguage}.arb!`);
+            alert(`Translation exported successfully as app_${targetLanguage}.json!`);
         }
     </script>
 </body>
