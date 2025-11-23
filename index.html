@@ -13,68 +13,32 @@
             <p>Manage and translate localization files</p>
         </div>
         
-        <div class="upload-section">
-            <div class="file-upload-item">
-                <h4>English File</h4>
-                <p>Upload the main English localization file</p>
-                <input type="file" id="englishFile" class="file-input" accept=".json">
-                <button class="upload-btn" onclick="document.getElementById('englishFile').click()">
-                    <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
-                    </svg>
-                    Select File
-                </button>
-            </div>
-            
-            <div class="file-upload-item">
-                <h4>Translation File</h4>
-                <p>Upload existing translation (optional)</p>
-                <input type="file" id="translationFile" class="file-input" accept=".json">
-                <button class="upload-btn" onclick="document.getElementById('translationFile').click()">
-                    <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                    </svg>
-                    Select File
-                </button>
-            </div>
-        </div>
-        
-        <div class="file-info" id="fileInfo">
-            <div class="file-status" id="englishStatus">
-                <svg class="checkmark" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span><strong>English:</strong> <span id="englishFileName">Not loaded</span></span>
-            </div>
-            <div class="file-status" id="translationStatus">
-                <svg class="checkmark" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span><strong>Translation:</strong> <span id="translationFileName">Not loaded</span></span>
-            </div>
-            <div class="info-grid">
-                <span class="info-label">Original locale:</span>
-                <span id="originalLocale">-</span>
-                <span class="info-label">Target locale:</span>
-                <span id="targetLocaleDisplay">-</span>
-                <span class="info-label">Total items:</span>
-                <span id="itemCount">0</span>
-                <span class="info-label">Pre-filled:</span>
-                <span id="preFilledCount">0</span>
-            </div>
-        </div>
-        
-        <div id="languageSection" class="hidden">
-            <div class="language-selector">
-                <label for="targetLanguage">Target Language Code</label>
-                <input type="text" id="targetLanguage" placeholder="e.g., es, fr, de, it">
-                <p class="input-help-text">Enter the language code for your translation</p>
-            </div>
-            
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number" id="totalItems">0</div>
-                    <div class="stat-label">Total</div>
+        <div class="main-content">
+            <div class="upload-section">
+                <div class="file-upload-container">
+                    <div class="file-upload-item">
+                        <h4>Original English File</h4>
+                        <p>Upload the main English localization file</p>
+                        <input type="file" id="englishFile" class="file-input" accept=".json">
+                        <button class="upload-btn" onclick="document.getElementById('englishFile').click()">
+                            <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                            </svg>
+                            Select English File
+                        </button>
+                    </div>
+                    
+                    <div class="file-upload-item">
+                        <h4>Existing Translation</h4>
+                        <p>Upload existing translation</p>
+                        <input type="file" id="translationFile" class="file-input" accept=".json">
+                        <button class="upload-btn secondary" onclick="document.getElementById('translationFile').click()">
+                            <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                            Select Translation
+                        </button>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number" id="completedItems">0</div>
@@ -126,3 +90,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
